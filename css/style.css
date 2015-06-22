@@ -1,0 +1,40 @@
+body {
+  margin: 1em 2em;
+}
+h1,
+h2,
+h3 {
+  font-family: sans-serif;
+  font-weight: 500;
+}
+p,
+aside,
+time {
+  font-family: serif;
+}
+#menu-outer {
+  background-color: rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 0.3em;
+}
+#menu-inner {
+  padding: 0.3em;
+}
+#menu-inner a {
+  display: inline-block;
+  margin: 0.1em 0.5em 0 0.3em;
+}
+#pagination {
+  text-align: center;
+}
+#pagination .prev,
+#pagination .next {
+  display: inline-block;
+  margin: 0.3em;
+}
+#recent-posts .recent-post-item {
+  margin-bottom: 0.3em;
+}
+#recent-posts .recent-post-item a {
+  margin-right: 1em;
+}
