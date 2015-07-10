@@ -759,7 +759,7 @@ td, th {
   display: flex;
   align-items: center;
   color: white;
-  background-image: url('../img/hero.jpg');
+  background-image: url('../img/hero.JPG');
   background-size: cover; }
   @media (min-width: 550px) {
     #details {
