@@ -161,8 +161,6 @@ a {
   color: #333;
   text-transform: uppercase;
   text-decoration: none;
-  border: 2px solid;
-  padding: 5px 10px 5px 10px;
   font-weight: 700; }
   a:hover {
     color: #737373; }
@@ -188,30 +186,27 @@ a {
 
 input[type="submit"], input[type="reset"], input[type="button"] {
   display: inline-block;
-  height: 38px;
-  padding: 0 30px;
   color: #555555;
   text-align: center;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 38px;
-  letter-spacing: .1rem;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
-  border-radius: 4px;
-  border: 1px solid #bbb;
   cursor: pointer;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  border: 2px solid;
+  padding: 5px 10px 5px 10px; }
 
 .button:hover, button:hover {
-  color: #333;
+  color: #888888;
   border-color: #888888;
   outline: 0; }
 
 input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
-  color: #333;
+  color: #888888;
   border-color: #888888;
   outline: 0; }
 
@@ -368,7 +363,8 @@ pre, blockquote, dl, figure, table, p, ul, ol, form {
 
 .u-full-width {
   width: 100%;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin-bottom: 30px; }
 
 .u-max-full-width {
   max-width: 100%;
@@ -755,7 +751,19 @@ td, th {
   padding: 0.3em; }
   .menu-inner a {
     display: inline-block;
-    margin: 0.1em 0.5em 0 0.3em; }
+    margin: 0.1em 0.5em 0 0.3em;
+    border: 2px solid;
+    padding: 5px 10px 5px 10px; }
+
+#details {
+  display: flex;
+  align-items: center;
+  color: white;
+  background-image: url('../img/hero.jpg');
+  background-size: cover; }
+  @media (min-width: 550px) {
+    #details {
+      height: 80vh; } }
 
 .info i {
   font-size: 15rem;
@@ -766,10 +774,11 @@ td, th {
   text-transform: uppercase; }
 
 #recent-posts .recent-post-item {
-  margin-bottom: 0.3em; }
+  margin-bottom: 20px; }
 
-#post {
+#article {
   height: 33vh;
+  border-radius: 3px;
   display: flex;
   overflow: hidden;
   background-size: cover !important;
@@ -779,22 +788,28 @@ td, th {
   z-index: 1;
   text-shadow: 0px 0px 3px black;
   color: #e6e6e6; }
-  #post:hover .details {
+  #article h5 {
+    display: inline;
+    font-weight: 700;
+    font-size: 18px;
+    border: 2px solid;
+    padding: 5px 10px 5px 10px; }
+  #article:hover .details {
     background-color: transparent; }
-  #post time {
+  #article time {
     display: block;
     margin-top: 10px; }
-  #post a {
+  #article a {
     color: #e6e6e6; }
-    #post a:hover {
+    #article a:hover {
       color: white; }
-  #post .details {
+  #article .details {
     padding: 20px 0 20px 0;
     align-self: center;
     width: 100%;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5); }
-  #post:hover:before {
+  #article:hover:before {
     -webkit-filter: blur(3px) !important;
     -ms-filter: blur(3px) !important;
     -moz-filter: blur(3px) !important;
@@ -802,7 +817,7 @@ td, th {
     filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
     transform: scale(1.2, 1.2);
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.35); }
-  #post:before {
+  #article:before {
     position: absolute;
     pointer-events: none;
     z-index: -1;
@@ -820,5 +835,22 @@ td, th {
     filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
     transition: all 0.1s ease; }
 
+label {
+  display: block; }
+  label:nth-child(n+2) {
+    margin-top: 25px; }
+
+#footer {
+  background-color: #333;
+  height: 50px;
+  color: #e1e1e1;
+  text-align: center;
+  line-height: 50px;
+  bottom: 0;
+  margin-top: 2rem; }
+  #footer i {
+    margin: 0 3px 0 3px;
+    font-size: 3rem; }
+
 .row {
-  padding: 0 10px 0 10px; }
+  padding: 0 20px 0 20px; }
