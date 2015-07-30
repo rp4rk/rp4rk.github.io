@@ -857,7 +857,7 @@ td, th {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5); }
   #article:hover:before {
-    translate3d: 0, 0, 0;
+    transform: translate3d(0, 0, 0);
     -webkit-filter: blur(3px) !important;
     -ms-filter: blur(3px) !important;
     -moz-filter: blur(3px) !important;
@@ -866,7 +866,7 @@ td, th {
     transform: scale(1.2, 1.2);
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.35); }
   #article:before {
-    translate3d: 0, 0, 0;
+    transform: translate3d(0, 0, 0);
     position: absolute;
     pointer-events: none;
     z-index: -1;
