@@ -721,6 +721,10 @@ body {
   position: relative;
   padding-bottom: 105px; }
 
+.menu_highlight {
+  background-color: #375e48;
+  color: white; }
+
 .icon.circled {
   font-size: 100px;
   color: #fff;
