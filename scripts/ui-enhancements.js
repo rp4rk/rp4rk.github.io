@@ -1,1 +1,0 @@
-$(window).load(function(){$(".hamburger").on("click",function(){this.classList.toggle("expanded"),$("#menu-outer").toggleClass("expanded")})});
