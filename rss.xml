@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ryan Park - Front End Web Developer]]></title><description><![CDATA[Ryan Park - Front End Web Developer]]></description><link>http://ryanpark.co.uk</link><generator>metalsmith-feed</generator><lastBuildDate>Wed, 20 Apr 2016 10:32:54 GMT</lastBuildDate><atom:link href="http://ryanpark.co.uk/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Building the Blog]]></title><description><![CDATA[<p>I don&#39;t particularly like rebuilding things that I&#39;ve already &#39;completed&#39;, building the new ryanpark.co.uk felt redundant at times; those worries are being dispelled right now as I type. The last iteration of the site supported portfolio posts, and it felt a little lacking that while I had my own space on the internet, I had built it in a way that only allowed one type of content to be posted up.</p>
+<p>Hours were spent tweaking <a href="https://hexo.io/">Hexo</a> to support two types of post category, eventually I decided a less opinionated generator was the only way forward. To that end, I found <a href="http://www.metalsmith.io/">Metalsmith</a>, an entirely pluggable static site generator. The change wasn&#39;t radical, in fact they both share a lot of similar functionality, and a lot of the advantages of Hexo are also present in Metalsmith, for example:</p>
+<ul>
+<li>Easy GitHub pages deployment.</li>
+<li>Secure.</li>
+<li>Speed.</li>
+<li>Asset management is native.</li>
+</ul>
+<p>These will be shared by almost all static site generators, and it&#39;s great! There&#39;s absolutely no requirement for a monolithic solution like Wordpress, I don&#39;t need to worry about constantly updating any plugins, breaches, or spam bots. The functionality drawback just isn&#39;t there with services like DISQUS providing comments that would usually require a non-static solution.</p>
+<h3 id="forging-iron">Forging Iron</h3>
+<p>I&#39;m not a huge fan of Yeoman, but it takes a lot of the time consuming logistics out of starting a new project in relatively unfamiliar territory. That does come with the caveat of being entirely dependent on the quality of the generator used, but <a href="https://github.com/eddywashere/generator-ironsmith">Ironsmith</a> proved to be an extremely solid choice.</p>
+<p>After using Ironsmith you&#39;re in a position to start writing your content straight away and get publishing. You&#39;ll notice that ryanpark.co.uk has a lot of extras built in to make it a little more personal. The changes include:</p>
+<ul>
+<li>Blog/Portfolio separation, each post type is unique.</li>
+<li>Portfolio cover images.</li>
+<li>Greeting changer.</li>
+<li>Bookshelf</li>
+<li>An almost entirely changed theme.</li>
+</ul>
+<h3 id="publishing-to-github-pages">Publishing to GitHub Pages</h3>
+]]></description><link>http://ryanpark.co.uk/blog/building-the-blog</link><guid isPermaLink="true">http://ryanpark.co.uk/blog/building-the-blog</guid><dc:creator><![CDATA[Ryan Park]]></dc:creator><pubDate>Wed, 20 Apr 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Developing With Windows]]></title><description><![CDATA[<p>Developing on Windows is a chore for front-end developers, you&#39;ll not go long without having to debug node-gyp and sifting through stacks of solutions trying to find the one for your exact situation. You&#39;ll also encounter the famous 256 character length problem on Windows, when your node_modules nesting exceeds the limit the OS can handle, after that the operating system cannot handle the paths. Another issue exists if you&#39;re used to the terminal, and commands such as <code>grep</code>, <code>ssh</code>, and other functionality doesn&#39;t translate over well.</p>
+<p>There are a number of ways to handle this, as someone who has been extremely frustrated in the past with how a Windows operating system flows during development, I think I&#39;ve found a fairly decent balance for my needs.</p>
+<h3 id="acquiring-balance">Acquiring Balance</h3>
+<p>I have two main devices I develop on, my desktop and my Surface Pro. There <em>may</em> be a simple solution for my problem, installing Ubuntu in some way. Be that either dual booting or formatting my Windows installation, that would work to solve all of my problems with Windows. I am of the inclination that Windows does certain things very well:</p>
+<h4 id="running-adobe-cc-software">Running Adobe CC Software</h4>
+<p>For a standard installation of Ubuntu, you&#39;re stuck with two solutions to this huge gap in software.</p>
+<ol>
+<li>You install WINE and try to use the compatibility layer to run Adobe software, for everything that&#39;s not an outdated version of Photoshop you might not be successful.</li>
+<li>Trying to sift through oceans of outdated or lacking applications, GIMP makes a decent alternative to Photoshop; but I also do a little video editing, After Effects has no equal in that regard.</li>
+</ol>
+<p>These simply aren&#39;t good enough, perhaps if you only needed Photoshop now and again but beware running an application through WINE comes at a heavy performance cost.</p>
+<h4 id="documents">Documents</h4>
+<p>There are a lot of solutions out there for Office-like functionality on Ubuntu, it still has a certain level of sway but not as it once had in the past. However, if you&#39;re looking to do something such as simple PDF annotation, there is nothing remotely close to what is being offered on Windows. Drawboard PDF is an amazing piece of software that I have missed sorely at times.</p>
+<h4 id="performance">Performance</h4>
+<p>Performance on linux is lacking for my specific hardware configuration, for example any video acceleration is severely handicapped by the poor implementation of AMD drivers. As my motherboard doesn&#39;t provide hardware pass-through, this means something such as simple video-editing cannot be hardware accelerated and becomes unbearably slow.</p>
+<h3 id="enter-docker">Enter Docker</h3>
+<p>Docker allows you to split up any application you&#39;re developing into the relevant micro-services. What this means is for something such as a typical Node.js application you can reliably separate it into different containers:</p>
+<ul>
+<li>A container running your Node application.</li>
+<li>A container running Nginx to reverse-proxy to your application.</li>
+<li>A container running your database solution.</li>
+</ul>
+<p>This could be further split down, for example you could split your node application into a client and an API that could then be used to power mobile applications. This has a lot of benefits, but the one that really shines for the development experience is that it normalizes your development and production environments. Your environments will be exactly the same, and using docker-machine allows you to define specific overrides for your production and development environment.</p>
+<p>A basic Dockerfile for a Node application could look something like;</p>
+<pre><code class="hljs">FROM mhart/alpine-node:latest
+
+<span class="hljs-comment"># Copy code into container</span>
+RUN mkdir /app
+WORKDIR /app
+ADD /src .
+
+<span class="hljs-comment"># Install Dependencies</span>
+RUN apk <span class="hljs-built_in">add</span> <span class="hljs-comment">--update make gcc g++ python</span>
+
+<span class="hljs-comment"># Install Node Modules as Production</span>
+RUN npm install <span class="hljs-comment">--production</span>
+RUN npm install -g nodemon
+
+<span class="hljs-comment"># Expose the container port</span>
+EXPOSE <span class="hljs-number">3000</span>
+
+<span class="hljs-comment"># Start the application</span>
+CMD [<span class="hljs-string">"npm"</span>, <span class="hljs-string">"start"</span>]</code></pre>
+
+<p>This is a straightforward set of instructions, and it allows you to focus on actually developing instead of worrying about constant incompatibility errors with your operating system, conflicts with dependencies from other projects, and other issues that come with not modularizing your project development workflow.</p>
+<p>Of course, there are still situations where setting up this type of workflow is a huge amount of overhead for the task at hand. For example I build this blog with a static site generator on my windows machine without worrying about containers and whatnot, there&#39;s next to no worries about something such as a task runner giving you any trouble. That said, there are certainly unexpected problem areas, such as image processing, which require a docker container to run on windows - but hopefully in the future when the bash implementation for Windows is working well we can throw those fringe cases to the wind.</p>
+]]></description><link>http://ryanpark.co.uk/blog/developing-with-windows</link><guid isPermaLink="true">http://ryanpark.co.uk/blog/developing-with-windows</guid><dc:creator><![CDATA[Ryan Park]]></dc:creator><pubDate>Wed, 20 Apr 2016 00:00:00 GMT</pubDate></item></channel></rss>
