@@ -7,8 +7,20 @@
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://ryanpark.co.uk/portfolio/conundrum</loc>
+        <loc>http://ryanpark.co.uk/blog/building-the-blog</loc>
+        <lastmod>2016-05-11</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://ryanpark.co.uk/blog/developing-with-windows</loc>
         <lastmod>2016-04-20</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://ryanpark.co.uk/blog/modernising-wordpress</loc>
+        <lastmod>2016-05-11</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
@@ -31,38 +43,32 @@
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://ryanpark.co.uk/blog/building-the-blog</loc>
-        <lastmod>2016-04-20</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>http://ryanpark.co.uk/blog/developing-with-windows</loc>
+        <loc>http://ryanpark.co.uk/portfolio/conundrum</loc>
         <lastmod>2016-04-20</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://ryanpark.co.uk/blog/1/index.html</loc>
-        <lastmod>2016-04-23</lastmod>
+        <lastmod>2016-05-11</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://ryanpark.co.uk/blog/index.html</loc>
-        <lastmod>2016-04-23</lastmod>
+        <lastmod>2016-05-11</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://ryanpark.co.uk/portfolio/1/index.html</loc>
-        <lastmod>2016-04-23</lastmod>
+        <lastmod>2016-05-11</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://ryanpark.co.uk/portfolio/index.html</loc>
-        <lastmod>2016-04-23</lastmod>
+        <lastmod>2016-05-11</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
